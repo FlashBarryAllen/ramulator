@@ -3,7 +3,7 @@ echo "$(whoami)"
 if [ "$UID" -ne 0 ]; then
   echo -e "[INFO] This tool needs root permissions. If ASLR is disabled in your system and you are generating traces with virtual addresses you can use \"-test\" option."
 fi
-[ "$UID" -eq 0 ] || exec sudo -E "$0" "$@"
+[ "$UID" -eq 0 ] || exec  -E "$0" "$@"
 
 if [ -z "${PIN_ROOT}" ]; then
   echo "Set PIN_ROOT."
@@ -90,7 +90,7 @@ mkdir $directory
 
 if [ "$test" = false ]; then
   # disabling ASLR
-  sudo sysctl -w kernel.randomize_va_space=0
+   sysctl -w kernel.randomize_va_space=0
 fi
 
 if [ "$sp" = true ]; then
@@ -152,5 +152,5 @@ done
 
 if [ "$test" = false ]; then
   # enabling ASLR
-  sudo sysctl -w kernel.randomize_va_space=2
+   sysctl -w kernel.randomize_va_space=2
 fi

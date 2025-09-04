@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "$(whoami)"
-[ "$UID" -eq 0 ] || exec sudo -E "$0" "$@"
+[ "$UID" -eq 0 ] || exec -E "$0" "$@"
 if [ -z "${PIN_ROOT}" ]; then
   echo "set PIN_ROOT."
   exit 1
@@ -14,4 +14,4 @@ make isimpoint.test
 cd ..
 echo -e "${RED} make gettrace.test${DEF}"
 make gettrace.test
-sudo rm -rf trace.out 
+rm -rf trace.out 

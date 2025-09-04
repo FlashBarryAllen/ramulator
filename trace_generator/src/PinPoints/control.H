@@ -34,6 +34,7 @@ END_LEGAL */
 #include <list>
 #include <iostream>
 #include <algorithm>
+using namespace std;
 
 #if defined(TARGET_IA32) || defined(TARGET_IA32E)
 extern "C" {

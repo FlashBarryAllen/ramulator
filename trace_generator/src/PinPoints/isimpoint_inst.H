@@ -39,6 +39,7 @@ END_LEGAL */
 #include "pin.H"
 #include "portability.H"
 #include "instlib.H"
+using namespace std;
 
 // ISIMPOINT_MAX_THREADS  is defined in instlib.H
 #define ISIMPOINT_MAX_IMAGES 250
